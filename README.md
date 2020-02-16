@@ -37,7 +37,7 @@ An simple example that does not require you worry about the sqlalchemy details c
 
 ```python
 from hepscrape import HepDataScraper
-from storage import HepPub
+from hepscrape.storage import HepPub
 hds = HepDataScraper()
 
 # Print the ID and title for the first 25 publications

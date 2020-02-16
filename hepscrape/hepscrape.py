@@ -2,11 +2,12 @@ import logging as log
 import os
 
 import requests
-from bs4 import BeautifulSoup
-from sqlalchemy import create_engine
 
-from storage import Base, HepPub
+from bs4 import BeautifulSoup
+from hepscrape.storage import Base, HepPub
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
 log.basicConfig(level=log.INFO)
 
 class HepDataScraper(object):
