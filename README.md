@@ -32,7 +32,7 @@ hds.fill_pubs(max_pubs=5)
 
 ## How to read
 The information is stored in sqlite format using the `sqlalchemy` python library and can be read back with standard syntax.
-An example can be found in `scripts/read.py`:
+An simple example that does not require you worry about the sqlalchemy details can be found in `scripts/read.py`:
 
 
 ```python
@@ -46,3 +46,5 @@ for i, pub in enumerate(hds.session().query(HepPub)):
         break
     print(pub.id, pub.title)
 ```
+
+Alternatively, you can of course also open the sqlite file with other means, such as the excellent [sqlitebrowser](https://sqlitebrowser.org/).
