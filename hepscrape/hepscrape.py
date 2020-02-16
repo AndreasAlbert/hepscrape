@@ -29,7 +29,7 @@ class HepDataScraper(object):
         
         # Make sure the folder exists
         if new:
-            dbdir = os.path.basename(dbpath)
+            dbdir = os.path.abspath(os.path.dirname(dbpath))
             try:
                 os.makedirs(dbdir)
             except FileExistsError:
@@ -78,7 +78,7 @@ class HepDataScraper(object):
         log.debug(f'Scraping page index {index}.')
         
         # Retrieve the corresponding page from the web
-        page = requests.get(f"{self.search_url}&page={index}")
+        page = requests.get(f"{self.search_url}&page={index}&size=100")
 
         # If we ask for an index that is too high,
         # we will get an internal server error 500
